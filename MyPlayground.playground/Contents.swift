@@ -56,39 +56,53 @@ import UIKit
 
 // Crud Swift
 
+//
+//var arrayy = [String]()
+//
+//func addd(thiss: String ) {
+//    print( arrayy.append(thiss))
+//}
+//
+//func readd(thisIndex: Int) {
+//   print(arrayy[thisIndex])
+//
+//}
+//
+//func deletee(removeAt: Int) {
+//   arrayy.remove(at: removeAt)
+//}
+//
+//func updatee(thisIndex: Int, with: String ) {
+//    arrayy.insert(with , at: thisIndex)
+//}
+//
+//
+//addd(thiss: "Bread")
+//readd(thisIndex: 0)
+//deletee(removeAt: 0)
+//addd(thiss: "Water")
+//addd(thiss: "Rice")
+//print(arrayy)
+//// before
+//updatee(thisIndex: 1, with: "Milk")
+//
+//// Data Base current stageing
+//print(arrayy)
 
-var arrayy = [String]()
 
-func addd(thiss: String ) {
-    print( arrayy.append(thiss))
-}
+// Struck ,Initializer, static properties, methods and access control
 
-func readd(thisIndex: Int) {
-   print(arrayy[thisIndex])
+struct Car {
+    var model: String
+    static var age: Int = 0
     
+    init(model: String) {
+        self.model = model
+        Car.age = 24
+    }
 }
 
-func deletee(removeAt: Int) {
-   arrayy.remove(at: removeAt)
-}
+var toyota = Car(model: "Toyota")
+print(toyota.model)
 
-func updatee(thisIndex: Int, with: String ) {
-    arrayy.insert(with , at: thisIndex)
-}
-
-
-addd(thiss: "Bread")
-readd(thisIndex: 0)
-deletee(removeAt: 0)
-addd(thiss: "Water")
-addd(thiss: "Rice")
-print(arrayy)
-// before 
-updatee(thisIndex: 1, with: "Milk")
-
-
-
-
-
-// Data Base
-print(arrayy)
+// class
