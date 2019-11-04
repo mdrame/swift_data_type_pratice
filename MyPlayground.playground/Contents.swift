@@ -27,32 +27,25 @@ import UIKit
 
 
 // struct
-
-//struct Sport {
+//
+//struct Bobaa {
 //
 //    var name: String
-//    var sportName: String
-//    var playSport: Bool
+//    var boba: Int
+//    var did_customer_paid : Bool
 //
-//    // computed property
-//    var player: String {
-//        if playSport {
-//            return " Yeah \(name) play \(sportName) no cap"
+//    func done() -> String {
+//        if did_customer_paid == true {
+//            return " Customer Paid"
 //        } else {
-//            return " Naw \(name) don't play no \(sportName). All cap cap"
+//            return " Nope He did not paid"
 //        }
-//    }
-//
-//
-//
-//    }
 //}
 //
+//}
 //
-//let soccer = Sport(name: "Mohammed", sportName: "Soccer", playSport: true, playerStrength: 30)
-//print(soccer.player)
-//print(soccer.playerStrength)
-
+//var transaction_Info = Bobaa(name: "Mohammed", boba: 2, did_customer_paid: true)
+//print(transaction_Info.done())
 
 // Crud Swift
 
@@ -92,17 +85,46 @@ import UIKit
 
 // Struck ,Initializer, static properties, methods and access control
 
-struct Car {
-    var model: String
-    static var age: Int = 0
-    
-    init(model: String) {
-        self.model = model
-        Car.age = 24
-    }
-}
-
-var toyota = Car(model: "Toyota")
-print(toyota.model)
+//struct Car {
+//    var model: String
+//    static var age: Int = 0
+//
+//    init(model: String) {
+//        self.model = model
+//        Car.age = 24
+//    }
+//}
+//
+//var toyota = Car(model: "Toyota")
+//print(toyota.model)
 
 // class
+
+//class Human {
+//
+//    var name = "Mohammed"
+//}
+//
+//
+//var mohammed = Human()
+//print(mohammed.name)
+//
+//var john = mohammed
+//john.name = "John"
+//print(john.name)
+//print("------------")
+//print(mohammed.name)
+
+// optionals
+
+//var man : String?
+//
+//if let name = man {
+//    print((name))
+//} else {
+//    print("Its an empty optional ")
+//}
+
+    
+// Enumerators ( Enum )
+
