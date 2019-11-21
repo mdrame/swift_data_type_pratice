@@ -114,40 +114,97 @@
 
 // control flow
 
-
-
-var target = 20
-
-
-switch target {
-case 0...10:
-    print("The target is b/w 0 to 10")
-case 11...25:
-    print("The target is b/w 1 to 25")
-case 26...100:
-    print("The target is b/w 26 to 100")
-default:
-    print(("We did not find an answer Sorry"))
-}
-
-
-switch target {
-case 1,2,3,4,5,6,7,8,9,0:
-    print("The answer is b/w 1 to 10")
-default:
-    print("The answer is \(target)")
-}
+//
+//
+//var target = 20
+//
+//
+//switch target {
+//case 0...10:
+//    print("The target is b/w 0 to 10")
+//case 11...25:
+//    print("The target is b/w 1 to 25")
+//case 26...100:
+//    print("The target is b/w 26 to 100")
+//default:
+//    print(("We did not find an answer Sorry"))
+//}
+//
+//
+//switch target {
+//case 1,2,3,4,5,6,7,8,9,0:
+//    print("The answer is b/w 1 to 10")
+//default:
+//    print("The answer is \(target)")
+//}
 
 // control flow statements
+//
+//let puzzleInput = "great minds think alike"
+//var puzzleOutput = ""
+//let charactersToRemove: [Character] = ["a", "e", "i", "o", "u", " "]
+//
+//for character in puzzleInput {
+//
+//    if charactersToRemove.contains(character) {
+//            continue
+//
+//    }
+//    puzzleOutput.append(character)
+//}
+//
+//
+//print(puzzleOutput)
+//// Prints "grtmndsthnklk”
+//
+//let numberSymbol: Character = "三"  // Chinese symbol for the number 3
+//var possibleIntegerValue: Int?
+//
+//switch numberSymbol {
+//case "1", "١", "一", "๑":
+//    possibleIntegerValue = 1
+//case "2", "٢", "二", "๒":
+//    possibleIntegerValue = 2
+//case "3", "٣", "三", "๓":
+//    possibleIntegerValue = 3
+//case "4", "٤", "四", "๔":
+//    possibleIntegerValue = 4
+//default:
+//    break
+//}
+//
+//if let integerValue = possibleIntegerValue {
+//    print("The integer value of \(numberSymbol) is \(integerValue).")
+//} else {
+//    print("An integer value could not be found for \(numberSymbol).")
+//}
+//// Prints "The integer value of 三 is 3.”
+
+class Car {
+    var year: String
+    
+    init(year: String) {
+        self.year = year
+    }
+}
+
+var toyota =  Car(year: "2005")
+print(toyota.year)
+
+var nissan = Car(year: "2019")
+print(nissan.year)
+
+var toyotaModel = toyota
+toyota.year = "2036"
+
+print(toyota.year)
+
+
+struct Human {
+    var name : String
+}
 
 
 
-
-
-
-
-
-
-
-
-
+var mohammed = Human(name: "Mohammed")
+print(mohammed.name)
