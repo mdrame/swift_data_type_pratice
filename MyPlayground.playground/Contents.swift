@@ -104,17 +104,41 @@
 //}
 
 // dic
-var dic: [String: Int] = [String:Int]()
+//var dic: [String: Int] = [String:Int]()
+//
+//dic["Mohammed"] = 1657
+//
+//for (key, value) in dic {
+//     print("\(key) is \(value) years old ")
+//}
 
-dic["Mohammed"] = 24
-
-print(dic)
+// control flow
 
 
 
+var target = 20
 
 
+switch target {
+case 0...10:
+    print("The target is b/w 0 to 10")
+case 11...25:
+    print("The target is b/w 1 to 25")
+case 26...100:
+    print("The target is b/w 26 to 100")
+default:
+    print(("We did not find an answer Sorry"))
+}
 
+
+switch target {
+case 1,2,3,4,5,6,7,8,9,0:
+    print("The answer is b/w 1 to 10")
+default:
+    print("The answer is \(target)")
+}
+
+// control flow statements
 
 
 
