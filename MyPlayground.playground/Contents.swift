@@ -1,5 +1,6 @@
 //
-//
+import UIKit
+import Foundation
 //
 //// tuples
 //
@@ -179,32 +180,99 @@
 //    print("An integer value could not be found for \(numberSymbol).")
 //}
 //// Prints "The integer value of 三 is 3.”
+///
 
-class Car {
-    var year: String
-    
-    init(year: String) {
-        self.year = year
+// use the final key workd to make the class uninheritable
+//class Car {
+//
+//    var year: String = "2005"
+//    var passanger : String {
+//        return "This care takes 4 passangers "
+//    }
+//
+//    func moving()  {
+//        print("Car is Moving")
+//    }
+//}
+
+// inheretance
+
+//class Truck: Car {
+//
+//
+//    override func moving() {
+//        print("Car Stop")
+//    }
+//
+//}
+//
+//var volvolMiniTruck = Truck()
+//print(volvolMiniTruck.moving())
+
+// initualization
+//
+//struct test {
+//
+//    var name: String?
+//
+//}
+//
+//var t = test(name: nil)
+//
+//print(t.name)
+
+
+//class Data {
+//
+//    var name: String
+//    var age: Int
+//
+//    init(name: String, age: Int) {
+//        self.name = name
+//        self.age = age
+//    }
+//
+//
+//}
+//
+//class SetData {
+//
+//    let dataList = [  Data(name: "Mohammed", age: 24),
+//                            Data(name: "Drame", age: 35) ]
+//
+//}
+//
+//var mohammed = SetData()
+//print(mohammed.dataList[0])
+//
+//
+///*
+//
+//
+
+
+
+
+
+//*/
+//                                // clo is now a boolean vaalue
+func takesClosure( name: String, clo: @escaping (Bool) -> Void) {
+    switch name {
+    case "Mohammed":
+        clo(true)
+    default:
+        clo(false)
     }
 }
 
-var toyota =  Car(year: "2005")
-print(toyota.year)
 
-var nissan = Car(year: "2019")
-print(nissan.year)
-
-var toyotaModel = toyota
-toyota.year = "2036"
-
-print(toyota.year)
-
-
-struct Human {
-    var name : String
+takesClosure(name: "mohaemsj") { (clo) in
+    if clo {
+        print("welcome mr sfasgarsga")
+    } else {
+        print("Wonger user name or password")
+    }
 }
 
 
 
-var mohammed = Human(name: "Mohammed")
-print(mohammed.name)
