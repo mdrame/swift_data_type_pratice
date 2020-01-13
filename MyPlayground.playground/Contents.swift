@@ -1,23 +1,23 @@
 
+import Foundation
+import UIKit
 
+var listToDublicate: [Character] = ["M", "i", "T", "T", "M", "i"]
 
-func evaluating(text: String)-> Bool {
+// Code in this playground is deleted almost every time I'm writting new code. {
+
+func addDublicate(list: [Character]) -> Set<Character> {
+    // initialize set
+    var sett: Set  = Set<Character>() // empty set
     
-    var list = [Character]()
-    for charector in text {
-        if list.contains(charector) {
-          
-            return false
-        }
-     
-            list.append(charector)
-   
+    for charecters in list {
+        sett.insert(charecters)
     }
-  
-    return true
+    
+    return sett
+    
+    
 }
 
-// ntesting 
-evaluating(text: "abcdefghrijklmnopqrstuvwyz")
 
-
+print(addDublicate(list: listToDublicate))
