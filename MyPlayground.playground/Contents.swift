@@ -1,41 +1,23 @@
+//
+//CS 1.2 Data Structure in swift
 
-import Foundation
-import UIKit
+//File I/O
 
-// Add dublicate using swift set
-//
-//var listToDublicate: [Character] = ["M", "i", "T", "T", "M", "i"]
-//
-//// Code in this playground is deleted almost every time I'm writting new code. {
-//
-//func addDublicate(list: [Character]) -> Set<Character> {
-//    // initialize set
-//    var sett: Set  = Set<Character>() // empty set
-//
-//    for charecters in list {
-//        sett.insert(charecters)
-//    }
-//
-//    return sett
-//
-//
-//}
-//
-//print(addDublicate(list: listToDublicate))
+let names = ["Mohammed", "Cynthia", "Joe", "Axel"]
 
 
-
-
-// Strin g palindrome
-
-func acceptString(parameter: String) -> Bool {
-    let lowerCased = parameter.lowercased()
-    return lowerCased.reversed() == Array(lowerCased)
+// checking list using first property 
+func checkFirstInList(list: [String]) {
+    if let firstPerson = list.first {
+        print("The first person is \(firstPerson)")
+    } else {
+        print("Array is empty")
+    }
+    
+    
 }
 
 
-
-acceptString(parameter: "Mohammed")
-
+checkFirstInList(list: names)
 
 
