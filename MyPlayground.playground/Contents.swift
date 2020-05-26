@@ -43,10 +43,30 @@ func containContainSameCharacters(first: String, second: String)->Bool {
     return one.sorted() == two.sorted()
 }
 
-containContainSameCharacters(first: "moh", second: "ohm")
-assert(containContainSameCharacters(first: "bob", second: "bbo") == true, "Sorry diffirent characters")
+//containContainSameCharacters(first: "moh", second: "ohm")
+//assert(containContainSameCharacters(first: "bob", second: "bbo") == true, "Sorry diffirent characters")
 
 
+/* Write your own version of the contains() method on String that ignores letter case, and without using the existing contains() method.*/
+
+extension String {
+    func containCharacter(of: String)->Bool {
+        var checkWord = of
+        var ofCount: Int = 0
+        for c in of { // 0(N)
+            if let index = self.index(of: c) { // 0(N)
+                ofCount += 1
+            } else {
+                return false
+            }
+        }
+        return ofCount == of.count
+    }
+}
+
+//let name = "Mohammed"
+//name.containCharacter(of: "M")
+//assert(name.containCharacter(of: "Mo") == true, "Sorry Somehting is wrong")
 
 
 
