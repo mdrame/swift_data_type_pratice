@@ -20,8 +20,8 @@ func uniqueLetters(text string: String)->Bool {
     return Set(string).count == string.count
 }
 
-uniqueLetters(text: "Mohm")
-assert(uniqueLetters(text: "Moham") == true, "False, the string is not unique")
+//uniqueLetters(text: "Mohm")
+//assert(uniqueLetters(text: "Moham") == true, "False, the string is not unique")
 
 
 
@@ -32,12 +32,19 @@ func sameReversed(text string: String) -> Bool {
     return lowerCase.reversed() == Array(lowerCase)
 }
 
-sameReversed(text: "rotator")
-assert(sameReversed(text: "raR") == true, "Strings are not the same when reversed")
+//sameReversed(text: "rotator")
+//assert(sameReversed(text: "raR") == true, "Strings are not the same when reversed")
 
+/* Write a function that accepts two String parameters, and returns true if they contain the same characters in any order taking into account letter case. */
 
+func containContainSameCharacters(first: String, second: String)->Bool {
+    let one = Array(first)
+    let two = Array(second)
+    return one.sorted() == two.sorted()
+}
 
-
+containContainSameCharacters(first: "moh", second: "ohm")
+assert(containContainSameCharacters(first: "bob", second: "bbo") == true, "Sorry diffirent characters")
 
 
 
