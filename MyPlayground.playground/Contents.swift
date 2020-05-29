@@ -49,25 +49,39 @@ func containContainSameCharacters(first: String, second: String)->Bool {
 
 /* Write your own version of the contains() method on String that ignores letter case, and without using the existing contains() method.*/
 
-extension String {
-    func containCharacter(of: String)->Bool {
-        var checkWord = of
-        var ofCount: Int = 0
-        for c in of { // 0(N)
-            if let index = self.index(of: c) { // 0(N)
-                ofCount += 1
-            } else {
-                return false
-            }
-        }
-        return ofCount == of.count
-    }
-}
+//extension String {
+//    func containCharacter(of: String)->Bool {
+//        var ofCount: Int = 0
+//        for c in of { // 0(N)
+//            if let _ = self.index(of: c) { // 0(N)
+//                ofCount += 1
+//            } else {
+//                return false
+//            }
+//        }
+//        return ofCount == of.count
+//    }
+//}
 
 //let name = "Mohammed"
 //name.containCharacter(of: "M")
 //assert(name.containCharacter(of: "Mo") == true, "Sorry Somehting is wrong")
 
+/* Write a function that accepts a string, and returns how many times a specific character appears, taking case into account. */
+
+public func specialCharecterCount(string: String)-> [String:Int] {
+    var characterCountDictionary: [String:Int] = [:]
+    for character in string { // 0(N)
+        if let count = characterCountDictionary["\(character)"] {
+            characterCountDictionary["\(character)"] = count + 1
+        } else {
+            characterCountDictionary["\(character)"] = 1
+        }
+    }
+    return characterCountDictionary
+}
+
+print(specialCharecterCount(string: "aabbcd"))
 
 
 
@@ -77,6 +91,53 @@ extension String {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public class Node {
+    var value: String
+    var next: Node?
+    weak var previous: Node?
+    init(value: String) {
+        self.value = value
+    }
+}
+
+
+public class LinkedList {
+    fileprivate var head: Node?
+    private var tail: Node?
+    
+    public var isEmpty: Bool {
+        return head == nil
+    }
+    
+    public var first: Node? {
+        return head
+    }
+    
+    public var last: Node? {
+        return tail
+    }
+    
+}
 
 
 
