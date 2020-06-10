@@ -1,5 +1,6 @@
 import Foundation
 //import UIKit
+// iMac Test
 
 /* Challenge 1: Do two strings contain the same characters? */
 
