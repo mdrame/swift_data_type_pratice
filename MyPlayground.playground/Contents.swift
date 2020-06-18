@@ -1,88 +1,18 @@
 import Foundation
 //import UIKit
-// iMac Test
 
-/* Challenge 1: Do two strings contain the same characters? */
+/* Write a function that accepts a String as its only parameter, and returns true if the string has
+ only unique letters, taking letter case into account. */
 
-func twoString(firstString: String, secondString: String)-> Bool {
-    let first = Array(firstString)
-    let second = Array(secondString)
-    print("\(first.sorted()) == \(second.sorted())")
-    return first.sorted() == second.sorted()
-}
-
-//print(twoString(firstString: "Mohammed", secondString: "Mohmaemd"))
-
-
-
-/* Write a function that accepts a String as its only parameter, and returns true if the string has only unique letters, taking letter case into account. */
-
-func uniqueLetters(text string: String)->Bool {
+func uniqueLetter(text string: String)-> Bool {
     return Set(string).count == string.count
 }
 
-//uniqueLetters(text: "Mohm")
-//assert(uniqueLetters(text: "Moham") == true, "False, the string is not unique")
+// Turn string into an Set ( sets a group of collection that take accepts unique characters only )
+// compare set count againt string count
+// if they are the same, than string is unique
 
-
-
-/* Write a function that accepts a String as its only parameter, and returns true if the string reads the same when reversed, ignoring case. */
-
-func sameReversed(text string: String) -> Bool {
-    let lowerCase = string.lowercased()
-    return lowerCase.reversed() == Array(lowerCase)
-}
-
-//sameReversed(text: "rotator")
-//assert(sameReversed(text: "raR") == true, "Strings are not the same when reversed")
-
-/* Write a function that accepts two String parameters, and returns true if they contain the same characters in any order taking into account letter case. */
-
-func containContainSameCharacters(first: String, second: String)->Bool {
-    let one = Array(first)
-    let two = Array(second)
-    return one.sorted() == two.sorted()
-}
-
-//containContainSameCharacters(first: "moh", second: "ohm")
-//assert(containContainSameCharacters(first: "bob", second: "bbo") == true, "Sorry diffirent characters")
-
-
-/* Write your own version of the contains() method on String that ignores letter case, and without using the existing contains() method.*/
-
-//extension String {
-//    func containCharacter(of: String)->Bool {
-//        var ofCount: Int = 0
-//        for c in of { // 0(N)
-//            if let _ = self.index(of: c) { // 0(N)
-//                ofCount += 1
-//            } else {
-//                return false
-//            }
-//        }
-//        return ofCount == of.count
-//    }
-//}
-
-//let name = "Mohammed"
-//name.containCharacter(of: "M")
-//assert(name.containCharacter(of: "Mo") == true, "Sorry Somehting is wrong")
-
-/* Write a function that accepts a string, and returns how many times a specific character appears, taking case into account. */
-
-public func specialCharecterCount(string: String)-> [String:Int] {
-    var characterCountDictionary: [String:Int] = [:]
-    for character in string { // 0(N)
-        if let count = characterCountDictionary["\(character)"] {
-            characterCountDictionary["\(character)"] = count + 1
-        } else {
-            characterCountDictionary["\(character)"] = 1
-        }
-    }
-    return characterCountDictionary
-}
-
-print(specialCharecterCount(string: "aabbcd"))
+uniqueLetter(text: "Mohammed")
 
 
 
@@ -111,40 +41,119 @@ print(specialCharecterCount(string: "aabbcd"))
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// MARK: Singly Linked List
 
 public class Node {
-    var value: String
+    var value: Int
     var next: Node?
     weak var previous: Node?
-    init(value: String) {
+    init(value: Int, next: Node?) {
         self.value = value
+        self.next = next
     }
 }
 
 
 public class LinkedList {
-    fileprivate var head: Node?
-    private var tail: Node?
+    /// Head determain if Linkedlist is empty or not
+    var head: Node?
+    var tail: Node?
     
-    public var isEmpty: Bool {
-        return head == nil
+    // MARK: Insert
+    func insert(value: Int) {
+        // checking if our link list is empty
+        if head == nil {
+            // if empty
+            head = Node(value: value, next: nil)
+            //            print("Head added")
+            return
+        }
+        
+        var current = head
+        while current?.next != nil {
+            current = current?.next
+        }
+        current?.next = Node(value: value, next: nil)
+        
     }
     
-    public var first: Node? {
-        return head
+    // MARK: Display Value
+    func displayListItems() {
+        var current = head // Head is not nil at this stage
+        while current != nil {
+            guard let value = current?.value else { return }
+            print("List Values\n")
+            print("Value: \(value)\n")
+            current = current?.next // head is equal nil
+        }
+        if current == nil {
+            isEmpty
+        } else {
+            displayListItems() // Recurssion
+        }
     }
     
-    public var last: Node? {
-        return tail
+    
+    // MARK: Is empty
+    var isEmpty: Bool {
+        if head != nil {
+            return false
+        } else {
+            print("Linked List is Empty buddy")
+            return true
+        }
+    }
+    
+    
+    
+    
+    // MARK: Delete
+    func delete(value: Int ) {
+        if head?.value == value {
+            head = head?.next
+        }
+        
+        var previous: Node?
+        var current = head
+        while current != nil && current?.value != value {
+            previous = current // previous == head
+            current = current?.next // current == Node 2
+        }
+        previous?.next = current?.next
+       
     }
     
 }
 
+let singleLinkedList = LinkedList()
+// Adding dummying nodes to linked list
+//singleLinkedList.insert(value: 1)
+//singleLinkedList.displayListItems()
+//print(singleLinkedList.head?.next as Any)
+//singleLinkedList.delete(value: 1)
+//singleLinkedList.displayListItems()
 
-
-
-
-
-
+// 1 -> 2 -> 3 -> Nil
+// Delete 2
 
 
