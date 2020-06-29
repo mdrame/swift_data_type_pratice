@@ -1,5 +1,5 @@
 import Foundation
-//import UIKit
+import UIKit
 
 /* Challenge 1: Do two strings contain the same characters? */
 
@@ -81,63 +81,65 @@ public func specialCharecterCount(string: String)-> [String:Int] {
     return characterCountDictionary
 }
 
-print(specialCharecterCount(string: "aabbcd"))
+//print(specialCharecterCount(string: "aabbcd"))
 
+/* Write a function that accepts a string as its input, and returns the same string just with duplicate letters removed.*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public class Node {
-    var value: String
-    var next: Node?
-    weak var previous: Node?
-    init(value: String) {
-        self.value = value
-    }
+public func duplicateLettersRemoved(text: String)->String {
+    let set = Set(text).sorted()
+    print(set)
+    return String(set)
 }
 
+print(duplicateLettersRemoved(text: "mohammed"))
+assert(duplicateLettersRemoved(text: "mohammed") == "mohaed", "Error: Duplicate not remove")
 
-public class LinkedList {
-    fileprivate var head: Node?
-    private var tail: Node?
-    
-    public var isEmpty: Bool {
-        return head == nil
-    }
-    
-    public var first: Node? {
-        return head
-    }
-    
-    public var last: Node? {
-        return tail
-    }
-    
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//public class Node {
+//    var value: String
+//    var next: Node?
+//    weak var previous: Node?
+//    init(value: String) {
+//        self.value = value
+//    }
+//}
+//
+//
+//public class LinkedList {
+//    fileprivate var head: Node?
+//    private var tail: Node?
+//
+//    public var isEmpty: Bool {
+//        return head == nil
+//    }
+//
+//    public var first: Node? {
+//        return head
+//    }
+//
+//    public var last: Node? {
+//        return tail
+//    }
+//
+//}
 
 
 
